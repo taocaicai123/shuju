@@ -1,0 +1,617 @@
+/* 通用样式 */
+body {
+  margin: 0;
+  font-family: '楷体', sans-serif;
+  color: beige; /* 深灰色字体 */
+  min-height: 100vh; /* 占满整个屏幕 */
+  display: flex;
+  flex-direction: column; /* 让内容垂直排列 */
+  align-items: center; /* 水平居中 */
+  background-image: url('../image/oq1.jpg'); /* 背景图片 */
+  background-size: cover; /* 背景图片覆盖 */
+  background-position: center; /* 背景图片居中 */
+}
+
+/* 导航栏样式 */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 80px;
+  background: rgba(255, 255, 255, 0.8); /* 半透明白色背景 */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* 柔和阴影 */
+  backdrop-filter: blur(10px); /* 毛玻璃效果 */
+}
+
+.navbar a {
+  color: #555; /* 深灰色字体 */
+  text-decoration: none;
+  font-size: 1.5em;
+  margin: 0 30px;
+  padding: 10px 20px;
+  transition: color 0.3s ease, transform 0.3s ease; /* 平滑过渡 */
+  position: relative;
+}
+
+.navbar a:hover {
+  color: #FFD700; /* 金色字体 */
+  transform: translateY(-3px); /* 向上移动 */
+}
+
+.navbar a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background: #FFD700; /* 金色调 */
+  transition: width 0.3s ease, left 0.3s ease; /* 平滑过渡 */
+}
+
+.navbar a:hover::after {
+  width: 100%;
+  left: 0; /* 下划线动态展开 */
+}
+
+/* 页面主体内容容器 */
+.container {
+  display: flex;
+  flex-direction: column; /* 垂直排列 */
+  gap: 20px; /* 区块间距 */
+  padding: 120px 20px 20px; /* 顶部留出导航栏空间 */
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+/* 通用区块样式 */
+.section {
+  /* background: rgba(255, 255, 255, 0.2); 半透明白色背景 */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* 柔和阴影 */
+  border-radius: 8px; /* 圆角 */
+  padding: 20px;
+  overflow: hidden;
+  position: relative;
+  transition: transform 0.3s ease; /* 悬浮效果 */
+  opacity: 0;
+  transform: translateY(50px);
+}
+
+.section.fade-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.section:hover {
+  transform: scale(1.02); /* 悬浮时稍微放大 */
+}
+
+.section img,
+.section video {
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* 标题样式 */
+h2 {
+  font-size: 1.8em;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+/* 插入图片样式 */
+.interstitial-image {
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+  position: relative;
+  opacity: 0;
+  transform: translateX(-100%); /* 初始位置在最左侧 */
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.interstitial-image.fade-in {
+  opacity: 1;
+}
+
+.interstitial-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* 图片覆盖 */
+}
+
+/* 右上角：介休洪山经典作品区块 */
+.section.classic-works {
+  position: relative;
+  height:100%; /* 自适应高度 */
+}
+/* 轮播图 */
+.carousel {
+  display: flex;
+  width: 100%;
+  animation: scroll 25s linear infinite; /* 从右向左滚动 */
+}
+
+/* 轮播图滚动动画 */
+@keyframes scroll {
+  0% {
+    transform: translateX(100%); /* 从屏幕右侧开始 */
+  }
+  100% {
+    transform: translateX(-100%); /* 滚动到屏幕左侧结束 */
+  }
+}
+
+/* 轮播图轨道 */
+.carousel-track {
+  display: flex;
+}
+
+/* 单张图片 */
+.carousel-item {
+  min-width: 300px; /* 图片宽度 */
+  height: 200px; /* 图片高度 */
+  margin: 0 10px; /* 图片间距 */
+  overflow: hidden;
+  border-radius: 10px; /* 图片圆角 */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* 图片阴影 */
+}
+
+.carousel-item video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* 保持视频比例 */
+}
+
+/* 鼠标悬浮时暂停滚动 */
+.carousel-container:hover .carousel {
+  animation-play-state: paused;
+}
+
+
+
+.introduction {
+  font-family: 楷体;
+}
+
+/* 左下角：洪山陶瓷介绍区块 */
+.introduction p {
+  line-height: 1.6;
+  font-size: 1.2em;
+  text-align: justify; /* 两端对齐 */
+}
+
+/* 销售统计图表样式 */
+.sales-stats {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 50px;
+}
+
+.chart-container {
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.chart {
+  display: block;
+  background: rgba(255, 255, 255, 0.8); /* 半透明白色背景 */
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* 柔和阴影 */
+  padding: 20px;
+}
+
+.chart rect {
+  transition: height 0.3s ease, fill 0.3s ease; /* 柱形动画 */
+}
+
+.chart rect:hover {
+  fill: #333; /* 悬浮时颜色变化 */
+  height: 250px; /* 悬浮时柱形增长 */
+}
+
+.chart text {
+  font-size: 12px;
+  fill: #333; /* 文字颜色 */
+}
+
+/* 地图模块样式 */
+.map {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 50px;
+}
+
+.map-container {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.map svg {
+  background: rgba(255, 255, 255, 0.8); /* 半透明白色背景 */
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* 柔和阴影 */
+  padding: 20px;
+}
+
+.map path {
+  transition: fill 0.3s ease; /* 颜色过渡动画 */
+}
+
+.map path:hover {
+  fill: #FF0000; /* 悬浮时颜色变化 */
+}
+
+.map circle {
+  transition: transform 0.3s ease, fill 0.3s ease; /* 悬浮动画 */
+}
+
+.map circle:hover {
+  transform: scale(1.5); /* 悬浮时放大 */
+  fill: #333; /* 悬浮时颜色变化 */
+}
+
+/* 扇形可视化模块样式 */
+.pie-chart {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 50px;
+}
+
+.pie-chart-container {
+  width: 100%;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.pie {
+  background: rgba(255, 255, 255, 0.8); /* 半透明白色背景 */
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* 柔和阴影 */
+  padding: 20px;
+}
+
+.pie circle {
+  transition: transform 0.3s ease, stroke 0.3s ease; /* 悬浮动画 */
+}
+
+.pie circle:hover {
+  transform: scale(1.1); /* 悬浮时放大 */
+  stroke: #FF0000; /* 悬浮时颜色变化 */
+}
+
+/* 特色展示模块样式 */
+.features {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 50px;
+}
+
+.feature-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  width: 100%;
+}
+
+.feature-item {
+  background: rgba(255, 255, 255, 0.1); /* 半透明白色背景 */
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* 柔和阴影 */
+  transition: transform 0.3s ease;
+}
+
+.feature-item:hover {
+  transform: translateY(-5px); /* 悬浮时稍微上移 */
+}
+
+.feature-item h3 {
+  font-size: 1.5em;
+  margin-bottom: 10px;
+}
+
+.feature-item p {
+  font-size: 1.1em;
+  line-height: 1.6;
+}
+
+/* 底部模块样式 */
+.footer {
+  width: 100%;
+  background: rgba(0, 0, 0, 0.8); /* 半透明黑色背景 */
+  padding: 20px 0;
+  margin-top: auto; /* 确保底部模块始终位于页面底部 */
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.footer h3 {
+  font-size: 1.5em;
+  color: #FFD700; /* 金色标题 */
+  margin-bottom: 10px;
+}
+
+.footer p {
+  color: #fff; /* 白色文字 */
+  font-size: 1.1em;
+  line-height: 1.6;
+}
+
+/* 媒体查询：适配移动端 */
+@media (max-width: 768px) {
+  /* 导航栏样式 */
+  .navbar {
+    height: auto; /* 高度自适应 */
+    flex-direction: column; /* 垂直排列 */
+    align-items: flex-start; /* 左对齐 */
+    padding: 10px 20px; /* 内边距 */
+  }
+
+  .navbar a {
+    font-size: 1.2em; /* 字体大小 */
+    margin: 10px 0; /* 上下间距 */
+  }
+
+  /* 页面主体内容容器 */
+  .container {
+    padding-top: 100px; /* 顶部留出导航栏空间 */
+  }
+
+  /* Swiper 轮播图样式 */
+  .swiper-container {
+    height: 200px; /* 高度调整 */
+  }
+
+  .swiper-slide {
+    width: 100%; /* 宽度占满 */
+    height: 200px; /* 高度调整 */
+  }
+
+  .gallery-top {
+    height: 60%; /* 调整高度 */
+  }
+
+  .gallery-thumbs {
+    height: 40%; /* 调整高度 */
+  }
+
+  .gallery-thumbs .swiper-slide {
+    width: 50%; /* 调整宽度 */
+  }
+
+  /* 插入图片样式 */
+  .interstitial-image {
+    height: 150px; /* 高度调整 */
+  }
+
+  /* 特色展示模块 */
+  .feature-grid {
+    grid-template-columns: 1fr; /* 单列显示 */
+  }
+
+  /* 销售统计图表样式 */
+  .chart text {
+    font-size: 10px; /* 字体大小 */
+  }
+
+  /* 地图模块样式 */
+  .map svg {
+    width: 100%; /* 宽度占满 */
+    height: auto; /* 高度自适应 */
+  }
+
+  /* 扇形可视化模块样式 */
+  .pie-chart-container {
+    width: 100%; /* 宽度占满 */
+  }
+
+  /* 底部模块样式 */
+  .footer-content {
+    flex-direction: column; /* 垂直排列 */
+    text-align: center; /* 文字居中 */
+  }
+
+  .footer h3 {
+    font-size: 1.2em; /* 字体大小 */
+  }
+
+  .footer p {
+    font-size: 1em; /* 字体大小 */
+  }
+}
+
+/* 媒体查询：适配桌面端 */
+@media (min-width: 769px) {
+  /* 导航栏样式 */
+  .navbar {
+    height: 80px; /* 固定高度 */
+    flex-direction: row; /* 水平排列 */
+    align-items: center; /* 垂直居中 */
+  }
+
+  .navbar a {
+    font-size: 1.5em; /* 字体大小 */
+    margin: 0 30px; /* 左右间距 */
+  }
+
+  /* 页面主体内容容器 */
+  .container {
+    padding-top: 120px; /* 顶部留出导航栏空间 */
+  }
+
+  /* Swiper 轮播图样式 */
+  .swiper-container {
+    height: 300px; /* 高度固定 */
+  }
+
+  .swiper-slide {
+    width: 400px; /* 宽度固定 */
+    height: 300px; /* 高度固定 */
+  }
+
+  .gallery-top {
+    height: 80%; /* 调整高度 */
+  }
+
+  .gallery-thumbs {
+    height: 20%; /* 调整高度 */
+  }
+
+  .gallery-thumbs .swiper-slide {
+      width: 25%; /* 调整宽度 */
+  }
+
+  /* 插入图片样式 */
+  .interstitial-image {
+    height: 200px; /* 高度固定 */
+  }
+
+  /* 特色展示模块 */
+  .feature-grid {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* 多列显示 */
+  }
+
+  /* 销售统计图表样式 */
+  .chart text {
+    font-size: 12px; /* 字体大小 */
+  }
+
+  /* 地图模块样式 */
+  .map svg {
+    width: 100%; /* 宽度占满 */
+    height: 400px; /* 高度固定 */
+  }
+
+  /* 扇形可视化模块样式 */
+  .pie-chart-container {
+    width: 400px; /* 宽度固定 */
+  }
+
+  /* 底部模块样式 */
+  .footer-content {
+    flex-direction: row; /* 水平排列 */
+    justify-content: space-between; /* 两端对齐 */
+    text-align: left; /* 文字左对齐 */
+  }
+
+  .footer h3 {
+    font-size: 1.5em; /* 字体大小 */
+  }
+
+  .footer p {
+    font-size: 1.1em; /* 字体大小 */
+  }
+}
+
+/* 媒体查询：适配桌面端 */
+@media (min-width: 769px) {
+  /* 导航栏样式 */
+  .navbar {
+    height: 80px; /* 固定高度 */
+    flex-direction: row; /* 水平排列 */
+    align-items: center; /* 垂直居中 */
+  }
+
+  .navbar a {
+    font-size: 1.5em; /* 字体大小 */
+    margin: 0 30px; /* 左右间距 */
+  }
+
+  /* 页面主体内容容器 */
+  .container {
+    padding-top: 120px; /* 顶部留出导航栏空间 */
+  }
+
+  /* Swiper 轮播图样式 */
+  .swiper-container {
+    height: 300px; /* 高度固定 */
+  }
+
+  .swiper-slide {
+    width: 400px; /* 宽度固定 */
+    height: 300px; /* 高度固定 */
+  }
+
+  .gallery-top {
+    height: 80%; /* 调整高度 */
+  }
+
+  .gallery-thumbs {
+    height: 20%; /* 调整高度 */
+  }
+
+  .gallery-thumbs .swiper-slide {
+    width: 25%; /* 调整宽度 */
+  }
+
+  /* 插入图片样式 */
+  .interstitial-image {
+    height: 200px; /* 高度固定 */
+  }
+
+  /* 特色展示模块 */
+  .feature-grid {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* 多列显示 */
+  }
+
+  /* 销售统计图表样式 */
+  .chart text {
+    font-size: 12px; /* 字体大小 */
+  }
+
+  /* 地图模块样式 */
+  .map svg {
+    width: 100%; /* 宽度占满 */
+    height: 400px; /* 高度固定 */
+  }
+
+  /* 扇形可视化模块样式 */
+  .pie-chart-container {
+    width: 400px; /* 宽度固定 */
+  }
+
+  /* 底部模块样式 */
+  .footer-content {
+    flex-direction: row; /* 水平排列 */
+    justify-content: space-between; /* 两端对齐 */
+    text-align: left; /* 文字左对齐 */
+  }
+
+  .footer h3 {
+    font-size: 1.5em; /* 字体大小 */
+  }
+
+  .footer p {
+    font-size: 1.1em; /* 字体大小 */
+  }
+}
+
+/* Random Background Images */
+.random-image {
+  position: absolute;
+  background-size: cover;
+  background-repeat: no-repeat;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  z-index: 0;
+}

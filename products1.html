@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>洪山陶瓷 - 陶瓷精品</title>
+    <link rel="stylesheet" href="./css/styles.css" />
+    <style>
+      body,
+      html {
+       background: url("./image/p1.jpg") no-repeat center center fixed; /* 背景图 */
+       background-size: cover;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Navbar -->
+    <nav class="navbar">
+      <a href="index.html">首页</a>
+      <a href="history1.html">历史渊源</a>
+      <a href="products1.html">陶瓷精品</a>
+      <a href="heritage1.html">传承发展</a>
+      <a href="making1.html">制作工艺</a>
+    </nav>
+
+    <!-- 第一部分 -->
+    <div class="section">
+       <div class="section-left">
+        <h1>陶瓷精品</h1>
+        <p>
+          山西洪山陶瓷是中国山西省介休市洪山镇的传统陶瓷艺术代表，以其红陶为主要特征，器型朴实耐用，常见大缸、盆、罐等实用器皿，釉色以红褐色或黑褐色为主，表面光亮，胎质坚硬。其代表精品如红陶大缸，容量大，常用于农业储存；彩绘陶罐则装饰精美，图案生动，展示了从实用向艺术的转变。洪山陶瓷不仅是古代农业社会的重要工具，也是中国传统陶瓷文化的重要组成部分，兼具实用性和艺术价值，体现了山西地域文化的独特魅力。
+        </p>
+      </div>
+      <div class="section-right">
+        <a href="https://9bek1ae4y.wasee.com/m/9bek1ae4y">具体介绍 &rarr;</a>
+      </div>
+    </div>
+
+    <script>
+      // 页面加载完成后立即触发动画
+      window.addEventListener("load", function () {
+        const sections = document.querySelectorAll(".section-left");
+        sections.forEach((section) => {
+          section.classList.add("visible"); // 为所有 .section-left 添加 .visible 类
+        });
+      });
+    </script>
+    <script src="./js/suiji.js"></script>
+  </body>
+</html>

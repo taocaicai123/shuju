@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>洪山陶瓷 - 制作工艺</title>
+    <link rel="stylesheet" href="./css/styles.css" />
+    <style>
+      body,
+      html {
+       background: url("./image/op4.jpg") no-repeat center center fixed; /* 背景图 */
+       background-size: cover;
+      }
+    </style>
+  </head>
+  <body>
+ <!-- Navbar -->
+    <nav class="navbar">
+      <a href="index.html">首页</a>
+      <a href="history1.html">历史渊源</a>
+      <a href="products1.html">陶瓷精品</a>
+      <a href="heritage1.html">传承发展</a>
+       <a href="making1.html">制作工艺</a>
+    </nav>
+
+    <!-- 第一部分 -->
+    <div class="section">
+      <div class="section-left">
+        <h1>制作工艺</h1>
+        <p>
+         山西洪山陶瓷的制作工艺以传统手工技艺为核心，包括选料、制泥、成型、晾干、上釉、烧制等工序。洪山陶瓷选用当地优质的红陶土，经过精细筛选和多次淘洗，确保坯体细腻。成型多采用手工拉坯或模制，器型朴实厚重，尤其以大缸、盆、罐等实用器皿见长。晾干后，素胎表面施以红褐色或黑褐色的釉料，采用浸釉或涂釉法，使釉面光亮均匀。最后，在高温窑炉中烧制，通常需要连续烧制数日，以达到胎质坚硬、釉色稳定的理想效果。整个工艺流程体现了山西陶瓷工匠精湛的手工技艺和对传统的坚守，同时也展现了红陶器皿独特的实用美学价值。
+        </p>
+      </div>
+      <div class="section-right">
+        <a href="making.html">具体介绍 &rarr;</a>
+      </div>
+    </div>
+
+    <script>
+      // 页面加载完成后立即触发动画
+      window.addEventListener("load", function () {
+        const sections = document.querySelectorAll(".section-left");
+        sections.forEach((section) => {
+          section.classList.add("visible"); // 为所有 .section-left 添加 .visible 类
+        });
+      });
+    </script>
+  </body>
+</html>

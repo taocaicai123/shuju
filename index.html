@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>洪山陶瓷 - 首页</title>
+    <link rel="stylesheet" href="./css/styles.css" />
+    <style>
+      body,
+      html {
+        background: url("./image/op1.jpg") no-repeat center center fixed; /* 背景图 */
+        background-size: cover;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Navbar -->
+    <nav class="navbar">
+      <a href="index.html">首页</a>
+      <a href="history1.html">历史渊源</a>
+      <a href="products1.html">陶瓷精品</a>
+      <a href="heritage1.html">传承发展</a>
+      <a href="making1.html">制作工艺</a>
+    </nav>
+
+    <!-- 第一部分 -->
+    <div class="section">
+      <div class="section-left">
+        <h1>洪山陶瓷</h1>
+        <p>
+          山西洪山陶瓷是中国山西省介休市洪山镇出产的特色陶瓷，始于唐代，盛于明清。其以红陶为主要特征，胎质坚硬，釉色朴实，常见器型如缸、罐、盆等。洪山陶瓷以实用性强、工艺精湛而闻名，广泛用于日常生活和农业用途。其独特的风格和历史文化价值，使其成为山西陶瓷艺术的重要代表之一。
+        </p>
+      </div>
+      <div class="section-right">
+        <a href="xiangxi.html">具体介绍 &rarr;</a>
+      </div>
+    </div>
+    <script>
+      // 页面加载完成后立即触发动画
+      window.addEventListener("load", function () {
+        const sections = document.querySelectorAll(".section-left");
+        sections.forEach((section) => {
+          section.classList.add("visible"); // 为所有 .section-left 添加 .visible 类
+        });
+      });
+    </script>
+  </body>
+</html>
+
+<!-- 
+<!-- 第一部分 -->
+<div class="section">
+  <div class="section-left">
+    <h1>洪山陶瓷</h1>
+    <p>
+      山西洪山陶瓷是中国山西省介休市洪山镇出产的特色陶瓷，始于唐代，盛于明清。其以红陶为主要特征，胎质坚硬，釉色朴实，常见器型如缸、罐、盆等。洪山陶瓷以实用性强、工艺精湛而闻名，广泛用于日常生活和农业用途。其独特的风格和历史文化价值，使其成为山西陶瓷艺术的重要代表之一。
+    </p>
+    <a href="#about">Learn More</a>
+  </div>
+  <div class="section-right">
+    <a href="xiangxi.html">具体介绍 &rarr;</a>
+  </div>
+</div>
+
+<!-- 第二部分 -->
+<div class="section">
+  <div class="section-left">
+    <h1>About Us</h1>
+    <p>
+      We are a team of professionals dedicated to creating innovative solutions.
+      We focus on quality and user experience.
+    </p>
+    <a href="#services">Our Services</a>
+  </div>
+  <div class="section-right">
+    <div class="floating-image"></div>
+  </div>
+</div>
+
+<!-- 第三部分 -->
+<div class="section">
+  <div class="section-left">
+    <h1>Contact Us</h1>
+    <p>
+      Feel free to reach out to us for any inquiries. We are here to help and
+      provide the best support.
+    </p>
+    <a href="#contact">Get in Touch</a>
+  </div>
+  <div class="section-right">
+    <div class="floating-image"></div>
+  </div>
+</div>
+-->

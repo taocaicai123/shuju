@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>洪山陶瓷制作工艺</title>
+    <link rel="stylesheet" href="./css/making.css" />
+  </head>
+  <body>
+    <!-- Navbar -->
+    <nav class="navbar">
+      <a href="index.html">首页</a>
+      <a href="history1.html">历史渊源</a>
+      <a href="products1.html">陶瓷精品</a>
+      <a href="heritage1.html">传承发展</a>
+      <a href="making1.html">制作工艺</a>
+    </nav>
+
+    <!-- 页面主体内容 -->
+    <div class="container">
+      <!-- 顶部Banner -->
+      <header class="banner">
+        <h1>匠心独运，工艺传承——洪山陶瓷的制作工艺</h1>
+        <p>探寻洪山陶瓷从泥土到器物的匠心之旅</p>
+      </header>
+      
+      <video src="./shipin/s5.mp4" controls autoplay></video>
+
+      <!-- 页面主要内容 -->
+      <section class="making-process">
+        <!-- 时间线容器 -->
+        <div class="timeline">
+          <!-- 原料选择与准备 -->
+          <div class="timeline-item" data-info="原料选择">
+            <h2>精选原料</h2>
+            <p>洪山陶瓷的制作始于优质原料的挑选与准备。</p>
+          </div>
+          <!-- 手工拉坯 -->
+          <div class="timeline-item" data-info="手工拉坯">
+            <h2>手工拉坯</h2>
+            <p>手工拉坯是洪山陶瓷制作中最为关键的环节之一。</p>
+          </div>
+          <!-- 上釉工艺 -->
+          <div class="timeline-item" data-info="上釉工艺">
+            <h2>上釉工艺</h2>
+            <p>上釉是洪山陶瓷制作中的点睛之笔。</p>
+          </div>
+          <!-- 烧制工艺 -->
+          <div class="timeline-item" data-info="烧制工艺">
+            <h2>烧制工艺</h2>
+            <p>烧制是洪山陶瓷制作中最为重要的环节之一。</p>
+          </div>
+          <!-- 装饰技艺 -->
+          <div class="timeline-item" data-info="装饰技艺">
+            <h2>装饰技艺</h2>
+            <p>洪山陶瓷的装饰技艺是其艺术价值的重要体现。</p>
+          </div>
+          <!-- 工艺传承与创新 -->
+          <div class="timeline-item" data-info="工艺传承">
+            <h2>传承与创新</h2>
+            <p>洪山陶瓷的制作工艺是千百年来匠人智慧的结晶。</p>
+          </div>
+        </div>
+
+        <!-- 弹出框容器 -->
+        <div class="popup-container">
+          <div class="popup-content"></div>
+        </div>
+      </section>
+    </div>
+
+    <!-- 底部模块 -->
+    <footer class="footer">
+      <div class="footer-content">
+        <div class="contact-info">
+          <h3>联系方式</h3>
+          <p>项目名称：墨轴洪山--为山西传承文化赋能</p>
+          <p>电话：+86 123 4567 890</p>
+          <p>邮箱：info@hongshantea.com</p>
+        </div>
+        <div class="copyright">
+          <p>版权所有 © 洪山陶瓷</p>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      // 弹出框逻辑
+      const timelineItems = document.querySelectorAll(".timeline-item");
+      const popupContent = document.querySelector(".popup-content");
+      const popupContainer = document.querySelector(".popup-container");
+
+      let popupTimer;
+
+      timelineItems.forEach((item) => {
+        item.addEventListener("mouseenter", () => {
+          // 清除之前的定时器
+          clearTimeout(popupTimer);
+
+          // 设置延时显示弹出框
+          popupTimer = setTimeout(() => {
+            const info = item.getAttribute("data-info");
+            const content = getPopupContent(info);
+            popupContent.innerHTML = content;
+
+            // 显示弹出框
+            popupContainer.style.visibility = "visible"; // 可见
+            popupContainer.style.opacity = "1"; // 透明度为 1
+          }, 100); // 延时 100ms
+        });
+
+        item.addEventListener("mouseleave", () => {
+          // 清除延时显示的定时器
+          clearTimeout(popupTimer);
+
+          // 设置延时隐藏弹出框
+          popupTimer = setTimeout(() => {
+            popupContainer.style.visibility = "hidden"; // 不可见
+            popupContainer.style.opacity = "0"; // 透明度为 0
+          }, 100); // 延时 100ms
+        });
+      });
+
+      // 获取弹出框内容
+      function getPopupContent(info) {
+        switch (info) {
+          case "原料选择":
+            return `
+              <div class="popup-item">
+                <h2>精选原料</h2>
+                <p>洪山陶瓷的制作始于优质原料的挑选与准备。洪山地区的红陶土富含多种矿物质，质地细腻，粘性适中，是制作陶瓷的理想材料。  
+
+首先，匠人们会从当地开采陶土，经过反复筛选，去除杂质，确保原料的纯净度。随后，陶土需要进行碾磨和搅拌，使其达到适合拉坯的湿度。  
+
+在原料准备过程中，匠人们还会根据器物的用途和风格，调配不同比例的原料。例如，制作大型陶缸时，会选用颗粒较大的陶土，以增强器物的强度；而制作小型陶瓶时，则会选用颗粒较细的陶土，以提高器物的细腻度。  </p>
+                <video src="./images/sss1.mp4"  autoplay></video>
+              </div>
+            `;
+          case "手工拉坯":
+            return `
+              <div class="popup-item">
+                <h2>手工拉坯</h2>
+                <p>手工拉坯是洪山陶瓷制作中最为关键的环节之一。匠人们凭借多年的经验和精湛的技艺，将陶土在转盘上拉制成各种器型。  
+
+拉坯前，匠人会将陶土揉搓成均匀的球状，放置在转盘中心。随后，匠人通过手掌的力度和方向控制，使陶土逐渐成型。无论是大型陶缸还是小型陶瓶，每一道弧线、每一个角度都凝聚了匠人的心血。  
+
+拉坯过程中，匠人还需要根据器物的特点，调整陶土的厚度和均匀度。例如，陶缸的底部需要较厚的胎体以增强承重能力，而陶瓶的颈部则需要较薄的胎体以增加美观性。  
+
+手工拉坯不仅是一项技术活，更是一种艺术创作。每一件洪山陶瓷器物都是独一无二的艺术品，体现了匠人对美的追求和对细节的关注。  </p>
+                <video src="./shipin/s2.mp4 "  autoplay></video>
+              </div>
+            `;
+          case "上釉工艺":
+            return `
+              <div class="popup-item">
+                <h2>上釉工艺</h2>
+                <p>上釉是洪山陶瓷制作中的点睛之笔。匠人们根据器物的用途和风格，选择合适的釉料，并通过精湛的技术将其均匀地涂抹在器物表面。  
+
+洪山陶瓷的釉料以红褐色和黑褐色为主，釉料的调制需要匠人们对原料比例和配方的精确把握。例如，红褐色釉料通常由氧化铁和石英砂混合而成，而黑褐色釉料则需要加入一定比例的锰矿石。  
+
+上釉时，匠人会采用浸釉、刷釉或喷釉等多种方式。对于大型陶缸，匠人通常采用浸釉法，使釉料能够均匀覆盖整个器物；而对于小型陶瓶，则采用刷釉法，通过细致的笔触勾勒出器物的细节和纹饰。  
+
+上釉完成后，器物需要在窑炉中进行高温烧制，使釉料与胎体融为一体，形成光滑细腻的表面。洪山陶瓷的釉色光亮均匀，古朴典雅，体现了匠人在釉料调制和上釉技术上的深厚功力。  </p>
+                <video src="./shipin/s6.mp4 "  autoplay></video>
+              </div>
+            `;
+          case "烧制工艺":
+            return `
+              <div class="popup-item">
+                <h2>烧制工艺</h2>
+                <p>烧制是洪山陶瓷制作中最为重要的环节之一。匠人们需要通过严格的温度控制和时间管理，确保器物在窑炉中达到最佳的烧制效果。  
+
+洪山陶瓷的窑炉通常采用传统的龙窑结构，能够实现阶梯式升温。烧制过程中，匠人会根据器物的特点，控制窑炉的温度和通风情况。例如，大型陶缸需要在较低的温度下缓慢升温，以避免胎体开裂；而小型陶瓶则需要在较高的温度下快速升温，以增强釉面的光泽度。  
+
+烧制时间通常为数小时至数十小时不等，期间匠人需要时刻关注窑炉的状况，及时调整火候。烧制完成后，器物需要在窑炉中自然冷却，以避免急冷导致器物变形或开裂。  
+
+经过窑火的淬炼，洪山陶瓷的胎体质地坚硬，釉色光亮，达到了实用与艺术的完美结合。  </p>
+                <video src="./shipin/s4.mp4 "  autoplay></video>
+              </div>
+            `;
+          case "装饰技艺":
+            return `
+              <div class="popup-item">
+                <h2>装饰技艺</h2>
+                <p>洪山陶瓷的装饰技艺是其艺术价值的重要体现。匠人们通过雕刻、刻画、彩绘等多种手法，为器物增添了独特的魅力。  
+
+雕刻是洪山陶瓷最常见的装饰方式之一。匠人会在器物表面雕刻出各种纹饰，如花卉、祥云、动物等，体现了古代匠人对自然的热爱和对美好生活的向往。  
+
+刻画是另一种重要的装饰手法。匠人通过简单的线条和图案，勾勒出器物的轮廓和细节，增加了器物的层次感和立体感。  
+
+彩绘技艺在明清时期的洪山陶瓷中尤为突出。匠人会在器物表面绘制出鲜艳的图案，如龙凤、花卉、山水等，体现了当时社会的审美取向和精神追求。  
+
+装饰技艺不仅为洪山陶瓷增添了艺术价值，还丰富了其文化内涵，使其成为兼具实用性和观赏性的艺术品。  </p>
+                 <video src="./shipin/s3.mp4 "  autoplay></video>
+              </div>
+            `;
+          case "工艺传承":
+            return `
+              <div class="popup-item">
+                <h2>传承与创新</h2>
+                <p>洪山陶瓷的制作工艺是千百年来匠人智慧的结晶，其传承与发展始终是洪山陶瓷面临的重要课题。  
+
+在传承方面，洪山陶瓷工匠通过口传心授的方式，将古老的制作技艺代代相传。近年来，相关部门还组织了陶瓷工艺培训班，培养新一代的陶瓷工匠，确保传统技艺不断代。  
+
+在创新方面，洪山陶瓷工匠与现代艺术家展开合作，尝试将传统工艺与现代设计理念相结合。例如，现代陶瓶通过简约的造型和独特的釉色，吸引了大量年轻消费者的关注；而艺术陶壶则通过创新的装饰手法，展示了洪山陶瓷的多样性。  
+
+未来，洪山陶瓷将继续坚持传承与创新并重，推动陶瓷文化的可持续发展，让洪山陶瓷在新时代焕发出新的生机与活力。  </p>
+                <img src="工艺传承.jpg" alt="工艺传承" />
+              </div>
+            `;
+          default:
+            return "";
+        }
+      }
+    </script>
+  </body>
+</html>

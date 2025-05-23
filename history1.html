@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>洪山陶瓷 - 历史渊源</title>
+    <link rel="stylesheet" href="./css/styles.css" />
+    <style>
+      body,
+      html {
+       background: url("./image/op3.jpg") no-repeat center center fixed; /* 背景图 */
+       background-size: cover;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Navbar -->
+    <nav class="navbar">
+      <a href="index.html">首页</a>
+      <a href="history1.html">历史渊源</a>
+      <a href="products1.html">陶瓷精品</a>
+      <a href="heritage1.html">传承发展</a>
+      <a href="making1.html">制作工艺</a>
+    </nav>
+
+  <!-- 第一部分 -->
+    <div class="section">
+      <div class="section-left">
+        <h1>历史渊源</h1>
+        <p>
+          山西洪山陶瓷的历史渊源可追溯至唐代，距今已有千年之久。洪山镇因丰富的陶土资源和便捷的交通条件，成为当时陶瓷生产的重要基地。唐代至宋代，洪山陶瓷以红陶为主，器型简约实用，广泛用于农业和日常生活。明清时期，洪山陶瓷工艺进一步发展，釉色更加丰富，器型多样化，成为山西地区最具代表性的陶瓷体系之一。近代以来，洪山陶瓷逐渐从实用器皿向艺术精品转变，传承了唐代以来的红陶技艺，同时融入了现代审美与工艺创新，成为中国传统陶瓷文化中的一颗璀璨明珠。
+        </p>
+      </div>
+      <div class="section-right">
+        <a href="history.html">具体介绍 &rarr;</a>
+      </div>
+    </div>
+
+    <script>
+      // 页面加载完成后立即触发动画
+      window.addEventListener("load", function () {
+        const sections = document.querySelectorAll(".section-left");
+        sections.forEach((section) => {
+          section.classList.add("visible"); // 为所有 .section-left 添加 .visible 类
+        });
+      });
+    </script>
+  </body>
+</html>
